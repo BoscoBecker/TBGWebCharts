@@ -1,0 +1,182 @@
+package TBGWebCharts;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  vcl,
+  vclie,
+  dbrtl,
+  fmx,
+  IndySystem,
+  IndyProtocols,
+  IndyCore;
+
+contains
+  Charts.Config in 'Charts.Config.pas',
+  Charts in 'Charts.pas',
+  HTML in 'HTML.pas',
+  Rows in 'Rows.pas',
+  Rows.Tag in 'Rows.Tag.pas',
+  Rows.Title.Config in 'Rows.Title.Config.pas',
+  Rows.Title in 'Rows.Title.pas',
+  View.Reg in 'View.Reg.pas',
+  View.WebCharts in 'View.WebCharts.pas',
+  Charts.DataSet in 'Charts.DataSet.pas',
+  Rows.Divv in 'Rows.Divv.pas',
+  Table.DataSet in 'Table.DataSet.pas',
+  Table in 'Table.pas',
+  Cards in 'Cards.pas',
+  Color in 'Color.pas',
+  Cards.DataSet in 'Cards.DataSet.pas',
+  Injection in 'Injection.pas',
+  Image in 'Image.pas',
+  Image.DataSet in 'Image.DataSet.pas',
+  Image.Classes in 'Image.Classes.pas',
+  Rows.P in 'Rows.P.pas',
+  PackCss in 'PackCss.pas',
+  PackJS in 'PackJS.pas',
+  Charts.Labelling in 'Charts.Labelling.pas',
+  Charts.Callback in 'Charts.Callback.pas',
+  NumberJS in 'NumberJS.pas',
+  Charts.Axes.Params in 'Charts.Axes.Params.pas',
+  Charts.Axes in 'Charts.Axes.pas',
+  Charts.Axes.Ticks in 'Charts.Axes.Ticks.pas',
+  Charts.Axes.GridLines in 'Charts.Axes.GridLines.pas',
+  Charts.Axes.ScaleLabel in 'Charts.Axes.ScaleLabel.pas',
+  Charts.Legends in 'Charts.Legends.pas',
+  Charts.Legends.Labels in 'Charts.Legends.Labels.pas',
+  Charts.Title in 'Charts.Title.pas',
+  Charts.Scales in 'Charts.Scales.pas',
+  Charts.Options in 'Charts.Options.pas',
+  Charts.Generic in 'Charts.Generic.pas',
+  Charts.Types in 'Charts.Types.pas',
+  Table.Options in 'Table.Options.pas',
+  DataTableJS in 'DataTableJS.pas',
+  DataTableCss in 'DataTableCss.pas',
+  BootstrapCss in 'BootstrapCss.pas',
+  Table.Data in 'Table.Data.pas',
+  Table.Features in 'Table.Features.pas',
+  Table.Callback in 'Table.Callback.pas',
+  Interfaces in 'Interfaces.pas',
+  StyleCSS in 'StyleCSS.pas',
+  Charts.Easy.Pie in 'Charts.Easy.Pie.pas',
+  Chart.Easy.PieJS in 'Chart.Easy.PieJS.pas',
+  Chart.Easy.PieCSS in 'Chart.Easy.PieCSS.pas',
+  Button in 'Button.pas',
+  Buttons.Classes in 'Buttons.Classes.pas',
+  Factory in 'Factory.pas',
+  Jumbotron in 'Jumbotron.pas',
+  Alerts in 'Alerts.pas',
+  Alerts.Classes in 'Alerts.Classes.pas',
+  CallBackJS in 'CallBackJS.pas',
+  ListGroup in 'ListGroup.pas',
+  ListGroup.Classes in 'ListGroup.Classes.pas',
+  Generic.DataSet in 'Generic.DataSet.pas',
+  PivotTable in 'PivotTable.pas',
+  Generic.List in 'Generic.List.pas',
+  PivotTable.Config in 'PivotTable.Config.pas',
+  Generic.Style in 'Generic.Style.pas',
+  JSCommand in 'JSCommand.pas',
+  PivotTableJS in 'PivotTableJS.pas',
+  JQuery.UIJS in 'JQuery.UIJS.pas',
+  PivotTableCSS in 'PivotTableCSS.pas',
+  BootstrapJS in 'BootstrapJS.pas',
+  PivotTablePlotlyJS in 'PivotTablePlotlyJS.pas',
+  PivotTablePlotlyRendersJS in 'PivotTablePlotlyRendersJS.pas',
+  PivotTable.Classes in 'PivotTable.Classes.pas',
+  Charts.Axes.Params.RealTime in 'Charts.Axes.Params.RealTime.pas',
+  MomentJS in 'MomentJS.pas',
+  ChartStreamJS in 'ChartStreamJS.pas',
+  Charts.Plugins in 'Charts.Plugins.pas',
+  UtilsJS in 'UtilsJS.pas',
+  FontawesomeallJS in 'FontawesomeallJS.pas',
+  JqueryJS in 'JqueryJS.pas',
+  PopperJS in 'PopperJS.pas',
+  TetherminJS in 'TetherminJS.pas',
+  ChartbundleJS in 'ChartbundleJS.pas',
+  Charts.Tooltip in 'Charts.Tooltip.pas',
+  Table.Action.Image in 'Table.Action.Image.pas',
+  Utilities.Encoder in 'Utilities.Encoder.pas',
+  Table.Action in 'Table.Action.pas',
+  GMapsJS in 'GMapsJS.pas',
+  Maps in 'Maps.pas',
+  Maps.GMaps in 'Maps.GMaps.pas',
+  Generic.Coordinates in 'Generic.Coordinates.pas',
+  Maps.GMaps.Options in 'Maps.GMaps.Options.pas',
+  Maps.Dataset in 'Maps.Dataset.pas',
+  Maps.GMaps.Draw in 'Maps.GMaps.Draw.pas',
+  Maps.GMaps.Draw.Marker in 'Maps.GMaps.Draw.Marker.pas',
+  Maps.GMaps.Draw.Circle in 'Maps.GMaps.Draw.Circle.pas',
+  Utilities.Str in 'Utilities.Str.pas',
+  Maps.GMaps.Layer in 'Maps.GMaps.Layer.pas',
+  Maps.GMaps.Layer.HeatMap in 'Maps.GMaps.Layer.HeatMap.pas',
+  Credenciais in 'Credenciais.pas',
+  Generic.Title in 'Generic.Title.pas',
+  Maps.Gmaps.Routes in 'Maps.Gmaps.Routes.pas',
+  Maps.Gmaps.Routes.Directions in 'Maps.Gmaps.Routes.Directions.pas',
+  Maps.Gmaps.Routes.Directions.Panel in 'Maps.Gmaps.Routes.Directions.Panel.pas',
+  Maps.InfoWindow in 'Maps.InfoWindow.pas',
+  Browser.VCL.WebBrowser in 'Browser.VCL.WebBrowser.pas',
+  D3JS in 'D3JS.pas',
+  LiquidFillGaugeJS in 'LiquidFillGaugeJS.pas',
+  LiquidFillGauge in 'LiquidFillGauge.pas',
+  LiquidFillGauge.Config in 'LiquidFillGauge.Config.pas',
+  LiquidFillGaugeCSS in 'LiquidFillGaugeCSS.pas',
+  CardStyled in 'CardStyled.pas',
+  CardStyled.IconRight in 'CardStyled.IconRight.pas',
+  CardStyled.Text in 'CardStyled.Text.pas',
+  CardStyled.Shape in 'CardStyled.Shape.pas',
+  CardStyled.Shape.Classes in 'CardStyled.Shape.Classes.pas',
+  DomElement in 'DomElement.pas',
+  CardStyled.IconLeft in 'CardStyled.IconLeft.pas',
+  QuillEditorJS in 'QuillEditorJS.pas',
+  QuillEditorCSS in 'QuillEditorCSS.pas',
+  RichTextEditor in 'RichTextEditor.pas',
+  RichTextEditor.Config in 'RichTextEditor.Config.pas',
+  QuillDeltaConverter in 'QuillDeltaConverter.pas',
+  RichTextEditor.Config.PrintHeader in 'RichTextEditor.Config.PrintHeader.pas',
+  RichTextEditor.Config.PrintHeader.Divv in 'RichTextEditor.Config.PrintHeader.Divv.pas',
+  RichTextEditor.Config.PrintHeader.Image in 'RichTextEditor.Config.PrintHeader.Image.pas',
+  RichTextEditor.Config.PrintHeader.Title in 'RichTextEditor.Config.PrintHeader.Title.pas',
+  CardStyled.IconBackground in 'CardStyled.IconBackground.pas',
+  Generic.ProgressBar in 'Generic.ProgressBar.pas',
+  Colors.Bootstrap in 'Colors.Bootstrap.pas',
+  Progress in 'Progress.pas',
+  CardStyled.Callback in 'CardStyled.Callback.pas',
+  Progress.Info in 'Progress.Info.pas',
+  Progress.Info.Text in 'Progress.Info.Text.pas',
+  Progress.Info.Icon in 'Progress.Info.Icon.pas',
+  ChartJSScript in 'ChartJSScript.pas';
+
+end.
+
+
+
+
+
