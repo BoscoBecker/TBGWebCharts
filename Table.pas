@@ -49,6 +49,7 @@ uses
 function TModelTable.&End: iModelHTML;
 var
   I: Integer;
+  LNomeRand: String;
 begin
   randomize();
   LNomeRand:= random(100).ToString;
